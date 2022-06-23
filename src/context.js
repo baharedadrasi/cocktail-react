@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+
 import axios from 'axios';
 
 const AppContext = React.createContext();
@@ -10,7 +11,33 @@ export const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([]);
   const [searchTerm, setSearchTerm] = useState('a');
 
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  const fetchCocktails = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios(`${url}${searchTerm}`);
+      const { drinks } = data;
+      if (drinks) {
+        setCocktails(drinks);
+      } else {
+        setCocktails([]);
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  useEffect(() => {
+    fetchCocktails();
+  }, [searchTerm]);
+
+  return (
+    <AppContext.Provider
+      value={{ loading, searchTerm, cocktails, setSearchTerm }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 // custom hook
