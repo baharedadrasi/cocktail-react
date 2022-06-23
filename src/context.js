@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useCallback } from 'react';
 
 import axios from 'axios';
 
@@ -11,7 +12,7 @@ export const AppProvider = ({ children }) => {
   const [cocktails, setCocktails] = useState([]);
   const [searchTerm, setSearchTerm] = useState('a');
 
-  const fetchCocktails = async () => {
+  const fetchCocktails = useCallback(async () => {
     setLoading(true);
     try {
       const { data } = await axios(`${url}${searchTerm}`);
@@ -25,11 +26,11 @@ export const AppProvider = ({ children }) => {
     } catch (error) {
       console.log(error.response);
     }
-  };
+  }, [searchTerm]);
 
   useEffect(() => {
     fetchCocktails();
-  }, [searchTerm]);
+  }, [searchTerm, fetchCocktails]);
 
   return (
     <AppContext.Provider

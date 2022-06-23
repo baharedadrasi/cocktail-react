@@ -11,6 +11,7 @@ const SearchForm = () => {
 
   React.useEffect(() => {
     searchValue.current.focus();
+    setSearchTerm('a');
   }, []);
 
   return (
