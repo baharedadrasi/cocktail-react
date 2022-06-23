@@ -114,6 +114,22 @@ Buttons
 }
 /* 
 ====== 
+Section
+======
+*/
+.section {
+  padding: 5rem 0;
+}
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+}
+/* 
+====== 
 Navbar
 ======
 */
@@ -148,4 +164,20 @@ Navbar
 }
 .nav-links a:hover {
   color: var(--primaryColor);
+}
+/* 
+====== 
+About
+======
+*/
+.about-section {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+.about-section p {
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 0.12rem;
+  color: var(--mainBlack);
 }
