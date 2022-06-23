@@ -137,7 +137,7 @@ Navbar
   background: var(--mainWhite);
   height: 5rem;
   border-bottom: 2px solid var(--primaryColor);
-  box-shadow: var(--darkShadow);
+  box-shadow: var(--lightShadow);
   display: flex;
   justify-content: center;
 }
@@ -193,4 +193,88 @@ Error
 .error-container {
   text-align: center;
   text-transform: capitalize;
+}
+/* 
+====== 
+Search
+======
+*/
+.search-section {
+  margin-top: 1rem;
+}
+.search-form {
+  width: var(--smallWidth);
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  background: var(--mainWhite);
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+  padding: 2rem 2.5rem;
+}
+.search-form label {
+  display: block;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+.search-form input {
+  width: 100%;
+  border: none;
+  border-color: transparent;
+  background: var(--mainBackground);
+  padding: 0.5rem;
+  border-radius: var(--mainBorderRadius);
+  font-size: 1.2rem;
+}
+/* 
+====== 
+Cocktails
+======
+*/
+.cocktails-center {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  /* align-items: start; */
+}
+@media screen and (min-width: 576px) {
+  .cocktails-center {
+    grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
+  }
+}
+.cocktail {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 1rem;
+}
+.cocktail img {
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+  height: 20rem;
+  object-fit: cover;
+}
+.cocktail-footer {
+  padding: 1.5rem;
+}
+.cocktail-footer h3,
+h4,
+p {
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+.cocktail-footer h3 {
+  font-size: 2rem;
+}
+.cocktail-footer p {
+  color: var(--darkGrey);
+  margin-bottom: 0.5rem;
 }

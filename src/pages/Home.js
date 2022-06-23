@@ -1,11 +1,13 @@
 import React from 'react';
+import SearchForm from '../components/SearchForm';
+import CocktailList from '../components/CocktialList';
 
 const Home = () => {
   return (
-    <>
-      <h2>home</h2>
-      <button className="btn btn-primary">click me</button>
-    </>
+    <main>
+      <SearchForm />
+      <CocktailList />
+    </main>
   );
 };
 

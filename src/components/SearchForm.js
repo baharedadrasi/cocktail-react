@@ -1,7 +1,16 @@
 import React from 'react';
 
 const SearchForm = () => {
-  return <h1>search form</h1>;
+  return (
+    <section className="section search-section">
+      <form className="search-form">
+        <div className="form-control">
+          <label htmlFor="name">search your favorite cocktail</label>
+          <input type="text" id="name" />
+        </div>
+      </form>
+    </section>
+  );
 };
 
 export default SearchForm;
